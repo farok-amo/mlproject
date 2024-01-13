@@ -1,5 +1,8 @@
 import os
 import sys
+
+from model_trainer import ModelTrainer
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
@@ -9,6 +12,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from data_transformation import DataTransformation, DataTransformationConfig
+
+
 @dataclass
 class DataIngestionConfig:
     train_data_path: str=os.path.join('artifects', "train.csv")
@@ -49,7 +54,9 @@ if __name__ == "__main__":
     train_path, test_path = obj.initiate_data_ingestion()
 
     data_transformer = DataTransformation()
-    data_transformer.initiate_data_transformation(train_path=train_path, test_path=test_path)
+    train_arr, test_arr,_ = data_transformer.initiate_data_transformation(
+        train_path=train_path, test_path=test_path)
 
+    print(ModelTrainer().initiate_model_trainer(train_arr, test_arr))
 
 
