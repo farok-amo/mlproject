@@ -15,8 +15,8 @@ class PredictPipeline:
     def predict(self, features):
         try:
             logging.info("predict enterd")
-            model = load_object('artifects\model.joblib')
-            preprocessor = load_object('artifects\preprocessor.joblib')
+            model = load_object('/var/app/current/artifects/model.joblib')
+            preprocessor = load_object('/var/app/current/artifects/preprocessor.joblib')
             logging.info("model&preprocessor imported")
             data = preprocessor.transform(features)
             logging.info("preprocessor done")
