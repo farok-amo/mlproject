@@ -20,7 +20,7 @@ from utils import save_object
    
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path = os.path.join('artifects', "preprocessor.pkl")
+    preprocessor_obj_file_path = os.path.join('artifects', "preprocessor.joblib")
 
 class DataTransformation:
     def __init__(self):
