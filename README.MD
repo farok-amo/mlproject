@@ -1,6 +1,6 @@
 # End to End ML project
 
-A general apprach to implement any ML project with an orgnised structure and pipeline. 
+A general approach to implement any ML project with an orgnised structure and pipeline. 
 The project also is deployed on AWS Elastic Beanstalk with EC2 instance.
 #### URL : http://end2endml-env.eba-mtvphctj.eu-west-2.elasticbeanstalk.com/predictdata
 
